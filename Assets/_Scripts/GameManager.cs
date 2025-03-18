@@ -9,6 +9,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
     [SerializeField] private LivesCounterUI livesCounter;
+    [SerializeField] private GameObject explosionEffect;
 
 
     private int currentBrickCount;
@@ -38,6 +39,8 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     {
         // fire audio here
         // implement particle effect here
+        Instantiate(explosionEffect, position, Quaternion.identity);
+
         // add camera shake here
         currentBrickCount--;
         Debug.Log($"Destroyed Brick at {position}, {currentBrickCount}/{totalBrickCount} remaining");
