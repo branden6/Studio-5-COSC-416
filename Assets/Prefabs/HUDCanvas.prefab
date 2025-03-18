@@ -417,7 +417,7 @@ GameObject:
   - component: {fileID: 3609214469674451633}
   - component: {fileID: 5515534788612451836}
   m_Layer: 5
-  m_Name: ScorePanel
+  m_Name: LivePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,8 +441,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -250, y: -60}
-  m_SizeDelta: {x: 520, y: 125}
+  m_AnchoredPosition: {x: -167.2425, y: -44.57538}
+  m_SizeDelta: {x: 334.4858, y: 62.6357}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9040927101365229209
 CanvasRenderer:
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 38
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
