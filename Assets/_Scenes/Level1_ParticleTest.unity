@@ -579,7 +579,7 @@ MonoBehaviour:
   ball: {fileID: 2054714181}
   bricksContainer: {fileID: 1170594424}
   livesCounter: {fileID: 976051647}
-  explosionEffect: {fileID: 2048886272}
+  explosionEffect: {fileID: 1383545982}
 --- !u!1001 &443665624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1773,11 +1773,11 @@ Transform:
   m_GameObject: {fileID: 1383545982}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.9, y: 8.62, z: -3.05}
+  m_LocalPosition: {x: 52.32, y: 0.40460777, z: 7.5770483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2048886273}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!199 &1383545984
 ParticleSystemRenderer:
@@ -1866,7 +1866,7 @@ ParticleSystem:
   serializedVersion: 8
   lengthInSec: 0.4
   simulationSpeed: 1
-  stopAction: 2
+  stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
@@ -2574,7 +2574,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 1.5
       mode: 0
       spread: 0
       speed:
@@ -7648,38 +7648,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10.850462, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &2048886272
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2048886273}
-  m_Layer: 0
-  m_Name: ExplosionEffect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2048886273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048886272}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4342257, y: -8.215392, z: 10.6270485}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1383545983}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2054714179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7784,4 +7752,4 @@ SceneRoots:
   - {fileID: 528482893}
   - {fileID: 1659980054}
   - {fileID: 542179513}
-  - {fileID: 2048886273}
+  - {fileID: 1383545983}
