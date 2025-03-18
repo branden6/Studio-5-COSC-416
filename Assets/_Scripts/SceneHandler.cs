@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 {
@@ -27,13 +28,23 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 
     private void OnSceneLoad(Scene scene, LoadSceneMode _)
     {
+        if (scene.name != menuScene)
+        {
+            TMP_Text scoreText = GameObject.Find("ScoreText")?.GetComponent<TMP_Text>();
+            if (scoreText != null)
+            {
+                ScoreManager.scoreManager.SetScoreTextReference(scoreText);
+            }
+        }
+
         transitionCanvas.DOLocalMoveX(initXPosition, animationDuration).SetEase(animationType);
     }
 
     public void LoadNextScene()
     {
-        if(nextLevelIndex >= levels.Count)
+        if (nextLevelIndex >= levels.Count)
         {
+            ScoreManager.scoreManager.DestroyScoreManager();
             LoadMenuScene();
         }
         else
