@@ -1,9 +1,8 @@
 using UnityEngine;
-using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private TMP_Text scoreText;  
+    [SerializeField] private ScoreCounterUI scoreCounter;
     private int score = 0;
 
     public static ScoreManager scoreManager { get; private set; }
@@ -29,7 +28,7 @@ public class ScoreManager : MonoBehaviour
     public void AddScore()
     {
         score += 1;  
-        UpdateScoreUI();
+        scoreCounter.UpdateScore(score);
     }
 
     public int GetScore()
@@ -37,25 +36,22 @@ public class ScoreManager : MonoBehaviour
         return score;
     }
 
-    public void SetScoreTextReference(TMP_Text newScoreText)
-    {
-        scoreText = newScoreText;
-        UpdateScoreUI();
-    }
-
-    private void UpdateScoreUI()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = $"Score: {score}";  
-        }
-    }
-
     public void InitializeScore(int startingScore)
     {
         score = startingScore;
         UpdateScoreUI();
     }
+
+    private void UpdateScoreUI()
+    {
+        scoreCounter.UpdateScore(score);
+    }
+    public void UpdateScoreCounterReference(ScoreCounterUI newScoreCounter)
+{
+    scoreCounter = newScoreCounter;
+    UpdateScoreUI();
+}
+
     public void DestroyScoreManager()
     {
         if (scoreManager == this)

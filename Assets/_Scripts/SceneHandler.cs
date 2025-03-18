@@ -28,12 +28,14 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 
     private void OnSceneLoad(Scene scene, LoadSceneMode _)
     {
+        // Update ScoreCounterUI reference when loading a new level
         if (scene.name != menuScene)
         {
-            TMP_Text scoreText = GameObject.Find("ScoreText")?.GetComponent<TMP_Text>();
-            if (scoreText != null)
+            ScoreCounterUI scoreCounterUI = FindObjectOfType<ScoreCounterUI>();
+            if (scoreCounterUI != null)
             {
-                ScoreManager.scoreManager.SetScoreTextReference(scoreText);
+                ScoreManager.scoreManager.UpdateScoreCounterReference(scoreCounterUI);
+                ScoreManager.scoreManager.InitializeScore(ScoreManager.scoreManager.GetScore());
             }
         }
 
