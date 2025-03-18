@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : SingletonMonoBehavior<GameManager>
 {
     [SerializeField] private int maxLives = 3;
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
-
     private int currentBrickCount;
     private int totalBrickCount;
 
@@ -34,7 +34,12 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         // add camera shake here
         currentBrickCount--;
         Debug.Log($"Destroyed Brick at {position}, {currentBrickCount}/{totalBrickCount} remaining");
-        if(currentBrickCount == 0) SceneHandler.Instance.LoadNextScene();
+        ScoreManager.scoreManager.AddScore(); //call scoremanager to add score! 
+        if (currentBrickCount == 0) 
+        {
+            SceneHandler.Instance.LoadNextScene();
+            ScoreManager.scoreManager.InitializeScore(ScoreManager.scoreManager.GetScore());
+        }
     }
 
     public void KillBall()

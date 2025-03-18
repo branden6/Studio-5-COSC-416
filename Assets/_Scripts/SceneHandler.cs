@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 {
@@ -27,6 +28,7 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 
     private void OnSceneLoad(Scene scene, LoadSceneMode _)
     {
+        ScoreManager.scoreManager.InitializeScore(ScoreManager.scoreManager.GetScore());
         transitionCanvas.DOLocalMoveX(initXPosition, animationDuration).SetEase(animationType);
     }
 
@@ -49,6 +51,7 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
         transitionCanvas.DOLocalMoveX(initXPosition + transitionCanvas.rect.width, animationDuration).SetEase(animationType);
         StartCoroutine(LoadSceneAfterTransition(menuScene));
         nextLevelIndex = 0;
+        ScoreManager.scoreManager.DestroyScoreManager();
     }
 
     private IEnumerator LoadSceneAfterTransition(string scene)
