@@ -17,7 +17,7 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 
@@ -37,14 +37,14 @@ public class ScoreManager : MonoBehaviour
         return score;
     }
 
+    public void SetScoreTextReference(TMP_Text newScoreText)
+    {
+        scoreText = newScoreText;
+        UpdateScoreUI();
+    }
+
     private void UpdateScoreUI()
     {
-        if (scoreText == null)
-        {
-            // Find the scoreText in the new scene
-            scoreText = GameObject.Find("ScoreText").GetComponent<TMP_Text>();
-        }
-
         if (scoreText != null)
         {
             scoreText.text = $"Score: {score}";  
@@ -55,5 +55,12 @@ public class ScoreManager : MonoBehaviour
     {
         score = startingScore;
         UpdateScoreUI();
+    }
+    public void DestroyScoreManager()
+    {
+        if (scoreManager == this)
+        {
+            Destroy(gameObject);
+        }
     }
 }
