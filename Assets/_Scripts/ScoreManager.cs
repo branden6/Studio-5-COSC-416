@@ -20,11 +20,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        UpdateScoreUI();
-    }
-
     public void AddScore()
     {
         score += 1;  
@@ -42,7 +37,7 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreUI();
     }
 
-    private void UpdateScoreUI()
+    public void UpdateScoreUI()
     {
         scoreCounter.UpdateScore(score);
     }

@@ -16,8 +16,10 @@ public class ScoreCounterUI : MonoBehaviour
     void Start()
     {
         Canvas.ForceUpdateCanvases();
-        current.SetText("0");
-        toUpdate.SetText("0");
+        // Initialize the UI with the current score from ScoreManager
+        int initialScore = ScoreManager.scoreManager.GetScore();
+        current.SetText($"{initialScore}");
+        toUpdate.SetText($"{initialScore}");
         containerInitPosition = scoreTextContainer.localPosition.y;
         moveAmount = current.rectTransform.rect.height;
     }
