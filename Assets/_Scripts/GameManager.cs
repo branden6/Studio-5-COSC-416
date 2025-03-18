@@ -9,6 +9,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
     [SerializeField] private Ball ball;
     [SerializeField] private Transform bricksContainer;
     [SerializeField] private LivesCounterUI livesCounter;
+    [SerializeField] private ScoreCounterUI scoreCounter;
     [SerializeField] private GameObject explosionEffect;
 
 

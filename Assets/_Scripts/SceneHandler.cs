@@ -28,16 +28,26 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
 
     private void OnSceneLoad(Scene scene, LoadSceneMode _)
     {
-        if (scene.name != menuScene)
-        {
-            TMP_Text scoreText = GameObject.Find("ScoreText")?.GetComponent<TMP_Text>();
-            if (scoreText != null)
-            {
-                ScoreManager.scoreManager.SetScoreTextReference(scoreText);
-            }
-        }
+    if (scene.name != menuScene)
+    {
+        // Use a coroutine to wait for the next frame
+        StartCoroutine(UpdateScoreCounterAfterFrame());
+    }
 
-        transitionCanvas.DOLocalMoveX(initXPosition, animationDuration).SetEase(animationType);
+    transitionCanvas.DOLocalMoveX(initXPosition, animationDuration).SetEase(animationType);
+    }
+    private IEnumerator UpdateScoreCounterAfterFrame()
+    {
+    // Wait for the next frame to ensure ScoreCounterUI's Start() runs first
+    yield return null;
+
+    ScoreCounterUI scoreCounterUI = FindObjectOfType<ScoreCounterUI>();
+    if (scoreCounterUI != null)
+    {
+        ScoreManager.scoreManager.UpdateScoreCounterReference(scoreCounterUI);
+        // Force the UI to update with the current score
+        ScoreManager.scoreManager.UpdateScoreUI();
+    }
     }
 
     public void LoadNextScene()
