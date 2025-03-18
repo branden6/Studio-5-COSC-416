@@ -9,6 +9,7 @@ public class ScoreCounterUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI toUpdate;
     [SerializeField] private Transform scoreTextContainer;
     [SerializeField] private float duration;
+    [SerializeField] private Ease animationCurve;
 
     private float containerInitPosition;
     private float moveAmount;
@@ -27,7 +28,7 @@ public class ScoreCounterUI : MonoBehaviour
     public void UpdateScore(int score)
     {
         toUpdate.SetText($"{score}");
-        scoreTextContainer.DOLocalMoveY(containerInitPosition + moveAmount, duration);
+        scoreTextContainer.DOLocalMoveY(containerInitPosition + moveAmount, duration).SetEase(animationCurve);
         StartCoroutine(ResetScoreContainer(score));
     }
 

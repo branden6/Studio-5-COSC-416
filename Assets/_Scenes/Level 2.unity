@@ -1419,6 +1419,7 @@ MonoBehaviour:
   toUpdate: {fileID: 1725653208}
   scoreTextContainer: {fileID: 957934785}
   duration: 0.4
+  animationCurve: 4
 --- !u!114 &870555339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6933,6 +6934,18 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 98040098946680784, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+      propertyPath: m_fontSize
+      value: 46.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 98040098946680784, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 98040098946680784, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2533400443438128912, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
       propertyPath: m_MinWidth
       value: 100
@@ -6967,6 +6980,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5209722064681059500, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515534788612451836, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+      propertyPath: m_Spacing
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515534788612451836, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+      propertyPath: m_Padding.m_Left
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5605500399998890221, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
@@ -7317,7 +7338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 40, y: 0}
+  m_AnchoredPosition: {x: 30, y: -25}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1287001916
@@ -7382,8 +7403,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -8112,8 +8133,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
