@@ -251,6 +251,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 809835417121010773, guid: a6b19c919c45ec24c982db98308cb5b7, type: 3}
   m_PrefabInstance: {fileID: 29243381}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &56475569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6462121753017138804, guid: a1ca4cc93a9904b77b5ff3b3780ec16c, type: 3}
+  m_PrefabInstance: {fileID: 1187577800}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 378e85cd8562c4be6be354b5898fd9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164358177
 GameObject:
   m_ObjectHideFlags: 0
@@ -2458,7 +2469,7 @@ MonoBehaviour:
   maxLives: 3
   ball: {fileID: 4561635119993004754}
   bricksContainer: {fileID: 796630123}
-  livesCounter: {fileID: 0}
+  livesCounter: {fileID: 56475569}
 --- !u!1001 &1708692028
 PrefabInstance:
   m_ObjectHideFlags: 0

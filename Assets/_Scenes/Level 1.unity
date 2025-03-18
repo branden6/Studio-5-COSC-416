@@ -575,11 +575,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88a3dfe015e34a6b8f942c6159e59f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 3
+  maxLives: 1
   ball: {fileID: 2054714181}
   bricksContainer: {fileID: 1170594424}
   livesCounter: {fileID: 976051647}
-  gameOverScreen: {fileID: 0}
 --- !u!1001 &443665624
 PrefabInstance:
   m_ObjectHideFlags: 0
