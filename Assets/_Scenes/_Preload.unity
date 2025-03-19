@@ -148,10 +148,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.169
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -616,7 +616,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a29eadf159eb4a1f84db77c0743485f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  musicSounds: []
+  musicSounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: 36eee518d6d354756ab7b0b83cb38abc, type: 3}
   sfxSounds:
   - name: ballHit
     clip: {fileID: 8300000, guid: 780fa42ec6adc4000b150b1cab6581e2, type: 3}
