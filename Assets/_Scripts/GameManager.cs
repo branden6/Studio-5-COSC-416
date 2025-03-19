@@ -41,6 +41,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         // fire audio here
         // implement particle effect here
         Instantiate(explosionEffect, position, Quaternion.identity);
+        AudioManager.Instance.PlaySFX("ballHit");
 
         // add camera shake here
         currentBrickCount--;
@@ -49,6 +50,7 @@ public class GameManager : SingletonMonoBehavior<GameManager>
         if (currentBrickCount == 0)
         {
             SceneHandler.Instance.LoadNextScene();
+             AudioManager.Instance.PlaySFX("levelPassed");
             ScoreManager.scoreManager.InitializeScore(ScoreManager.scoreManager.GetScore());
         }
     }
@@ -58,6 +60,10 @@ public void KillBall()
 {
     maxLives--;
     livesCounter.UpdateLives(maxLives);
+    if(maxLives >= 1){
+        AudioManager.Instance.PlaySFX("lostLife");
+    }
+    
 
     if (maxLives <= 0)
     {
@@ -72,6 +78,7 @@ public void KillBall()
 
     private IEnumerator GameOverSequence()
     {
+        AudioManager.Instance.PlaySFX("gameOver2");
         yield return new WaitForSecondsRealtime(0.25f);
         SceneManager.LoadScene("GameOverScene");
     }

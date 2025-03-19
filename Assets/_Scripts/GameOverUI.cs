@@ -8,6 +8,7 @@ public class GameOverUI : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.musicSource.Stop();
         int finalScore = PlayerPrefs.GetInt("FinalScore", 0);
         scoreText.text = $"Your Score: {finalScore}";
     }
@@ -16,5 +17,6 @@ public class GameOverUI : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("mainMenu");
+        AudioManager.Instance.PlayMusic("Theme");
     }
 }
