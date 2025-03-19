@@ -30,7 +30,7 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
     {
     if (scene.name != menuScene)
     {
-        // Use a coroutine to wait for the next frame
+        
         StartCoroutine(UpdateScoreCounterAfterFrame());
     }
 
@@ -38,14 +38,14 @@ public class SceneHandler : SingletonMonoBehavior<SceneHandler>
     }
     private IEnumerator UpdateScoreCounterAfterFrame()
     {
-    // Wait for the next frame to ensure ScoreCounterUI's Start() runs first
+    
     yield return null;
 
     ScoreCounterUI scoreCounterUI = FindObjectOfType<ScoreCounterUI>();
     if (scoreCounterUI != null)
     {
         ScoreManager.scoreManager.UpdateScoreCounterReference(scoreCounterUI);
-        // Force the UI to update with the current score
+        
         ScoreManager.scoreManager.UpdateScoreUI();
     }
     }

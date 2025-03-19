@@ -61,7 +61,7 @@ public void KillBall()
 
     if (maxLives <= 0)
     {
-        PlayerPrefs.SetInt("FinalScore", ScoreManager.scoreManager.GetScore()); // ← move here!
+        PlayerPrefs.SetInt("FinalScore", ScoreManager.scoreManager.GetScore()); 
         StartCoroutine(GameOverSequence());
         return;
     }
