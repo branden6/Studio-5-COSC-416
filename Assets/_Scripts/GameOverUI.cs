@@ -17,5 +17,6 @@ public class GameOverUI : MonoBehaviour
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("mainMenu");
+        AudioManager.Instance.PlayMusic("Theme");
     }
 }
