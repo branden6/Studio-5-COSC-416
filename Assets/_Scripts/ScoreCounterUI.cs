@@ -28,9 +28,11 @@ public class ScoreCounterUI : MonoBehaviour
     public void UpdateScore(int score)
     {
         toUpdate.SetText($"{score}");
+
         scoreTextContainer.DOLocalMoveY(containerInitPosition + moveAmount, duration).SetEase(animationCurve);
         StartCoroutine(ResetScoreContainer(score));
     }
+
 
     private IEnumerator ResetScoreContainer(int score)
     {
